@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ScrollBar?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<SplitPane dividerPositions="0.34006211180124224, 0.703416149068323" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="306.0" prefWidth="831.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.MainWindowController">
+  <items>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="346.0" prefWidth="255.0">
+         <children>
+            <Button layoutX="60.0" layoutY="14.0" mnemonicParsing="false" onAction="#LoadCSV" text="Load data" />
+            <Button layoutX="129.0" layoutY="14.0" mnemonicParsing="false" onAction="#calculate" text="Calculate path" />
+            <Button layoutY="14.0" mnemonicParsing="false" onAction="#Connect" text="Connect" />
+         </children></AnchorPane>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+         <children>
+            <Button layoutX="172.0" layoutY="21.0" mnemonicParsing="false" onAction="#Load" text="Load" />
+            <RadioButton fx:id="autopilotButton" layoutX="14.0" layoutY="18.0" mnemonicParsing="false" text="Autopilot">
+               <font>
+                  <Font size="21.0" />
+               </font></RadioButton>
+            <TextArea fx:id="txtArea" layoutX="18.0" layoutY="66.0" prefHeight="217.0" prefWidth="229.0" />
+         </children></AnchorPane>
+      <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="398.0" prefWidth="935.0">
+         <children>
+            <Circle fx:id="bigCircle" fill="DODGERBLUE" layoutX="134.0" layoutY="165.0" radius="89.0" stroke="BLACK" strokeType="INSIDE" translateX="1.0" />
+            <Circle fx:id="smallCircle" fill="#1f2327" layoutX="132.0" layoutY="165.0" onMouseDragged="#dragable" onMousePressed="#dragable" onMouseReleased="#dragable_exit" radius="33.0" stroke="BLACK" strokeType="INSIDE" />
+            <RadioButton fx:id="manualButton" layoutX="80.0" layoutY="6.0" mnemonicParsing="false" text="Manual">
+               <font>
+                  <Font size="20.0" />
+               </font></RadioButton>
+            <Text layoutX="108.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="aileron">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+            <Text layoutX="102.0" layoutY="291.0" stroke="#cf6c6c" strokeType="INSIDE" strokeWidth="0.0" text="rudder" wrappingWidth="66.00000000000023">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+            <Text layoutX="-15.0" layoutY="175.0" rotate="270.0" strokeType="OUTSIDE" strokeWidth="0.0" text="throtlle">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+            <Text layoutX="221.0" layoutY="159.0" rotate="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="elevator">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+            <ScrollBar fx:id="throtlleBar" layoutX="25.0" layoutY="79.0" orientation="VERTICAL" prefHeight="171.0" prefWidth="12.0" />
+            <ScrollBar fx:id="rudderBar" layoutX="25.0" layoutY="258.0" prefHeight="14.0" prefWidth="215.0" />
+         </children>
+      </AnchorPane>
+  </items>
+</SplitPane>
